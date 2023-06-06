@@ -2,6 +2,9 @@
 import py_compile
 import os
 
+export PYFILE = my_main.py
+python compile_script.py
+
 # Getting the Python script filename from the environment variable
 pyfile = os.environ.get('PYFILE')
 
