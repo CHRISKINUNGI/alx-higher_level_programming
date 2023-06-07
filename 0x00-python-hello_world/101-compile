@@ -1,3 +1,6 @@
+export PYFILE=my_main.py
+python compile_script.py
+
 import py_compile
 import os
 
