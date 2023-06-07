@@ -1,13 +1,14 @@
+import py_compile
+import os
 
-
-# Getting the Python script filename from the environment variable
+# Get the Python script filename from the environment variable
 pyfile = os.environ.get('PYFILE')
 
 if pyfile:
-    # Adding the '.pyc' extension to the original filename
+    # Add the '.pyc' extension to the original filename
     pycfile = pyfile + 'c'
 
-    # Compiling the Python script
+    # Compile the Python script
     try:
         py_compile.compile(pyfile, pycfile)
         print(f"Successfully compiled '{pyfile}' to '{pycfile}'.")
