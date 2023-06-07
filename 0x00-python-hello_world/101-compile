@@ -1,3 +1,5 @@
+#!/bin/bash
+
 export PYFILE=my_main.py
 python compile_script.py
 
