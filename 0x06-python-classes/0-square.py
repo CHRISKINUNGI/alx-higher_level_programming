@@ -1,4 +1,10 @@
 #!/usr/bin/python3
+
+""" Class Square """
+
+
 class Square:
-    print(type(mysquare))
-    print(mysquare.dict_)
+
+    """ Class defination """
+
+    pass
