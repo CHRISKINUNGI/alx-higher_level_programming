@@ -1,3 +1,4 @@
 #!/usr/bin/python3
 class Square:
-    pass
+    print(type(mysquare))
+    print(mysquare.dict_)
