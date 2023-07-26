@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 The ``add_integer`` module
 ==========================
 
@@ -51,12 +52,22 @@ test case with one string and one float:
          ...
     TypeError: a must be an integer
 
-
     >>> add_integer(1,-2)
     -1
-
 
     >>> add_integer(-5,"men")
     Traceback (most recent call last):
          ...
     TypeError: b must be an integer
+
+    >>> add_integer()
+	Traceback (most recent call last):
+	    ...
+    TypeError: add_integer() missing 1 required positional argument: 'a'
+    
+    >>> add_integer(5,2,2)
+	Traceback (most recent call last):
+	    ...
+    TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+
