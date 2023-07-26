@@ -1,26 +1,45 @@
-The ``say_my_name`` module
-==========================
+This module defines a function that prints the first and last name``say_my_name(first_name, last_name=""):
 
-using say_my_name
------------------
 
-	#case 1
+usage
+
+``matrix_divided``` prints "My name is <first_name> <last_name>".
+
+
+::
+
 	>>> say_my_name = __import__('3-say_my_name').say_my_name
-	>>> say_my_name("Carl","Munene")
-	My name is Carl Munene
+	>>> say_my_name("Ken", "Martin")
+	My name is Ken Martin
 
-	#case 2
-	>>> say_my_name(1,"Munene")
+Invalid names
+
+if first_name or last_name si not a string a TypeError is raised
+
+::
+
+	>>> say_my_name(6, "James")
 	Traceback (most recent call last):
-	  ...
 	TypeError: first_name must be a string
 
-	#case 3
-	>>> say_my_name("Carl",1)
+::
+
+	>>> say_my_name("master", 1)
 	Traceback (most recent call last):
-	  ...
 	TypeError: last_name must be a string
 
-	#case 4
-	>>> say_my_name('Carl')
-	My name is Carl
+::
+
+    >>> say_my_name({"Kemboi": 9, "Alesis": 23}, 10.10)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+At least one name must be provided.
+
+::
+
+	>>> say_my_name()
+	Traceback (most recent call last):
+	TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+
