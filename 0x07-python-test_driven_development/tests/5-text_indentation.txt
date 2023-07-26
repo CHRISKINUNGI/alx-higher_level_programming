@@ -27,11 +27,16 @@ The function should print two lines when it encounters any of the following
 	Traceback (most recent call last):
 	TypeError: text must be a string
 
-test 4 handling new line character:
+#test 4 handling new line character:
 	>>> text_indentation("Can I go to the next line Huh?\n")
 	Can I go to the next line Huh?
 	<BLANKLINE>
 	<BLANKLINE>
 
 
+#test 5:
+	>>> text_indentation()
+	Traceback (most recent call last):
+        ...
+        TypeError: text_indentation() missing 1 required positional argument: 'text'
 
