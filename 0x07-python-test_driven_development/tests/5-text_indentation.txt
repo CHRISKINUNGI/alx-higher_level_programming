@@ -1,0 +1,37 @@
+In this module are the tests for the function ```text_indentation(text):```
+
+usage
+
+This function is called with the parameter text which is a long string of text
+The function should print two lines when it encounters any of the following
+'.' or '?' or ':'
+
+#test 1: Optimum working
+
+	>>> text_indentation = __import__('5-text_indentation').text_indentation
+	>>> text_indentation("We are going to have a good day. Aren't we?")
+	We are going to have a good day.
+    	<BLANKLINE>
+    	Aren't we?
+    	<BLANKLINE>
+
+#test 2: passing an integer
+
+	>>> text_indentation(2)
+	Traceback (most recent call last):
+	...
+	TypeError: text must be a string
+
+#test 3:
+	>>> text_indentation(None)
+	Traceback (most recent call last):
+	TypeError: text must be a string
+
+test 4 handling new line character:
+	>>> text_indentation("Can I go to the next line Huh?\n")
+	Can I go to the next line Huh?
+	<BLANKLINE>
+	<BLANKLINE>
+
+
+
