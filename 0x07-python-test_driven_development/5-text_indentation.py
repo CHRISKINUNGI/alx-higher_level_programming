@@ -3,13 +3,13 @@
 
 
 def text_indentation(text):
-    """ 
-        text_indentation(text): function to prints a 
+    """
+        text_indentation(text): function to prints a
         text with 2 new lines after each of these characters: ., ? and :
 
         args:
-            text (string): string to 
-        raise: 
+            text (string): string to
+        raise:
             TypeError(text must be a string)
 
     """
