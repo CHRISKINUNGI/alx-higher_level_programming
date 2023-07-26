@@ -1,4 +1,9 @@
-#!/usr/bin/python3
+The ``add_integer`` module
+==========================
+
+using add_integer
+-----------------
+
     >>> add_integer = __import__('0-add_integer').add_integer
 
 test case with two integers:
@@ -46,7 +51,14 @@ test case with one string and one float:
          ...
     TypeError: a must be an integer
 
-
+    >>> add_integer()
+	Traceback (most recent call last):
+	  ...
+	TypeError: add_integer() missing 1 required positional argument: 'a'
+	>>> add_integer(5,2,2)
+	Traceback (most recent call last):
+	  ...
+	TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
 
 
 
