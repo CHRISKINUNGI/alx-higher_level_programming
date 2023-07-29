@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-
 """ Module that contains a class BaseGeometry """
+
 
 class BaseGeometry:
     """ BaseGeometry class """
@@ -16,6 +16,7 @@ class BaseGeometry:
         if value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
 
+
 class Rectangle(BaseGeometry):
     """ Rectangle class """
 
@@ -25,4 +26,3 @@ class Rectangle(BaseGeometry):
         self.integer_validator("height", height)
         self.__width = width
         self.__height = height
-    
