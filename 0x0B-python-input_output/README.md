@@ -1,0 +1,1 @@
+This is a project that is ment to practice python I/O

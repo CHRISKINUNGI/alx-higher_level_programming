@@ -1,0 +1,1 @@
+This is a sub-directory made to learn inheritance in python in the ALX SE program.

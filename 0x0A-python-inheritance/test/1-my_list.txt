@@ -1,0 +1,62 @@
+The ``MyList`` class module
+==========================
+
+using MyList class
+-----------------
+
+:: Case 1: Import modules and check type
+	>>> MyList = __import__('1-my_list').MyList
+	>>> my_list = MyList()
+	>>> type(my_list)
+	<class '1-my_list.MyList'>
+
+:: Case 2: Create an instance of MyList
+	>>> my_list = MyList()
+	>>> print(my_list)
+	[]
+	>>> my_list.append(1)
+	>>> my_list.append(2)
+	>>> my_list.append(3)
+
+:: Case 3: Print the list
+	>>> print(my_list)
+	[1, 2, 3]
+	>>> my_list.append(4)
+	>>> my_list.append(5)
+	>>> my_list.append(6)
+	>>> print(my_list)
+	[1, 2, 3, 4, 5, 6]
+
+:: Case 4: Insert an element at a specific position
+	>>> my_list.insert(4, 10)
+	>>> print(my_list)
+	[1, 2, 3, 4, 10, 5, 6]
+	>>> my_list.insert(0, -1)
+	>>> print(my_list)
+	[-1, 1, 2, 3, 4, 10, 5, 6]
+
+:: Case 5: Sort the list and print
+	>>> my_list.print_sorted()
+	[-1, 1, 2, 3, 4, 5, 6, 10]
+
+:: Case 6: Check if the list is valid
+	>>> isinstance(my_list,list)
+	True
+
+:: Case 7: check print_sorted() with empty list
+	>>> test_list = MyList()
+	>>> test_list.print_sorted()
+	[]
+
+:: Case 8: check print_sorted() returns a new list
+	>> assert my_list.print_sorted()
+	[-1, 1, 2, 3, 4, 5, 6, 10]
+	Traceback (most recent call last):
+  	...
+	AssertionError
+
+:: Case 9: check print_sorted() returns a new list
+	>>> new_list = my_list.print_sorted()
+	[-1, 1, 2, 3, 4, 5, 6, 10]
+	>>> isinstance(new_list, list)
+	False
