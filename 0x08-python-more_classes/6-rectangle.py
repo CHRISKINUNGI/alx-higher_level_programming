@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Module for Rectangle class with del methods."""
 
+
 class Rectangle:
     """Rectangle class."""
 
@@ -11,7 +12,7 @@ class Rectangle:
         Args:
             width (int): width of rectangle
             height (int): height of rectangle
-        """   
+        """
 
         self.width = width
         self.height = height
@@ -21,7 +22,7 @@ class Rectangle:
     def width(self):
         """Get/set width of rectangle."""
         return self.__width
-    
+
     @width.setter
     def width(self, value):
         if not isinstance(value, int):
@@ -29,14 +30,14 @@ class Rectangle:
 
         if value < 0:
             raise ValueError("width must be >= 0")
-        
+
         self.__width = value
 
     @property
     def height(self):
         """Get/set height of rectangle."""
         return self.__height
-    
+
     @height.setter
     def height(self, value):
         if not isinstance(value, int):
@@ -44,13 +45,13 @@ class Rectangle:
 
         if value < 0:
             raise ValueError("height must be >= 0")
-        
+
         self.__height = value
 
     def area(self):
         """Return area of rectangle."""
         return self.width * self.height
-    
+
     def perimeter(self):
         """Return perimeter of rectangle."""
         if self.width == 0 or self.height == 0:
@@ -62,7 +63,7 @@ class Rectangle:
         if self.width == 0 or self.height == 0:
             return ""
         return "\n".join(["#" * self.width] * self.height)
-    
+
     def __repr__(self):
         """Return string representation of rectangle"""
         return "Rectangle({}, {})".format(self.width, self.height)
