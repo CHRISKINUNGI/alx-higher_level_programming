@@ -1,7 +1,16 @@
 #!/usr/bin/python3
+"""
+This module is about inheritance
+"""
+
 
 class MyList(list):
-    """ Class that inherits from list """
+    """
+    This class MyList is inheriting from list
+    """
+
     def print_sorted(self):
-        """ Function that prints the list, but sorted (ascending sort) """
+        """
+        This is a function of printing sorted integer values
+        """
         print(sorted(self))
