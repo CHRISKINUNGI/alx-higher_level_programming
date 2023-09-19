@@ -12,6 +12,9 @@ def main():
        code engine
     """
 
+    if len(sys.argv) != 5:
+        sys.exit(1)
+
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]
@@ -22,7 +25,6 @@ def main():
 
     cursor = db_connection.cursor()
 
-    """ BINARY ensures case sensitive """
     query = """
     SELECT * FROM states WHERE BINARY
     name = ('{}') ORDER BY id ASC""".format(state_name)
