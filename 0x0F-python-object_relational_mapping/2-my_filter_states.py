@@ -22,8 +22,8 @@ def main():
 
     cursor = db_connection.cursor()
 
-    query = """SELECT *FROM states WHERE name = %s ORDER BY id ASC"""
-    cursor.execute(query, [state_name])
+    query = "SELECT *FROM states WHERE name = ('{}') ORDER BY id ASC".format(state_name)
+    cursor.execute(query)
 
     results = cursor.fetchall()
 
