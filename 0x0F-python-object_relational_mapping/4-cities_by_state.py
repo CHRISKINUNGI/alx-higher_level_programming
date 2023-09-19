@@ -23,7 +23,10 @@ def main():
 
     cursor = db_connection.cursor()
 
-    cursor.execute("SELECT * FROM cities ORDER BY cities.id ASC")
+    cursor.execute("""
+    SELECT cities.id, cities.name, states.name FROM 
+    cities INNER JOIN states ON cities.state_id = states.id 
+    ORDER BY cities.id ASC""")
 
     results = cursor.fetchall()
 
