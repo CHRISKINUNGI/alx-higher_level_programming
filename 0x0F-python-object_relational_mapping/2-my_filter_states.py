@@ -23,7 +23,7 @@ def main():
     cursor = db_connection.cursor()
 
     query = """
-    SELECT * FROM states WHERE
+    SELECT * FROM states WHERE BINARY
     name = ('{}') ORDER BY id ASC""".format(state_name)
     cursor.execute(query)
 
