@@ -22,7 +22,9 @@ def main():
 
     cursor = db_connection.cursor()
 
-    query = "SELECT *FROM states WHERE name = ('{}') ORDER BY id ASC".format(state_name)
+    query = """
+    SELECT * FROM states WHERE
+    name = ('{}') ORDER BY id ASC""".format(state_name)
     cursor.execute(query)
 
     results = cursor.fetchall()
