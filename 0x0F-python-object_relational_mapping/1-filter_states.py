@@ -20,12 +20,16 @@ def main():
     db_connection = MySQLdb.connect("localhost", mysql_username,
                                     mysql_password, database_name)
     cursor = db_connection.cursor()
+
     """ Execute the Query and get results """
-    cursor.execute("SELECT *FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
-    results = cursor.fetchall()
+    cursor.execute("SELECT * FROM states ORDER BY id ASC")
+    rows = cursor.fetchall()
+
+    """ Fetch all rows and filter names starting with an uppercase 'N' """
+    filtered_state = [(id, name) for id, name in rows if name.startswith('N')]
 
     """ Display results """
-    for row in results:
+    for row in filtered_state:
         print(f"({row[0]}, '{row[1]}')")
 
     """ close the database connection and cursor """
