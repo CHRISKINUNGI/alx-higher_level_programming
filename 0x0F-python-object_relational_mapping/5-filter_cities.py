@@ -36,13 +36,20 @@ def main():
     cursor.execute(query)
 
     results = cursor.fetchall()
+    len_results = len(results)
 
     """ Display """
+    position = 1
     for row in results:
-        if row[1] == None:
+        if row[1] is None:
             print()
-        else: 
-            print("{}".format(row[1]), end = ", ")
+        else:
+            if position == len_results:
+                print("{}".format(row[1]), end="")
+            else:
+                print("{}".format(row[1]), end=", ")
+        position += 1
+
     print()
 
     """ close cursor and db connection """
