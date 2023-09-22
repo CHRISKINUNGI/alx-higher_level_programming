@@ -12,9 +12,6 @@ from sqlalchemy import MetaData
 """ creating engine """
 engine = create_engine("mysql://root:Kitchen2020.@localhost:3306")
 
-""" creating Session """
-Session = sessionmaker(bind=engine)
-session = Session()
 
 """ Base  declaration """
 Base = declarative_base()
@@ -35,3 +32,8 @@ class State(Base):
 
 """ Migration of the data """
 Base.metadata.create_all(engine)
+
+
+""" creating Session """
+Session = sessionmaker(bind=engine)
+session = Session()
