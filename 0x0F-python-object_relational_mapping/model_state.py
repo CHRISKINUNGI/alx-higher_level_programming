@@ -1,47 +1,25 @@
 #!/usr/bin/python3
 """
-    python file that contains the class definition of a
-    State and an instance Base = declarative_base()
+This script contains the class definitionof a
+State and an instance Base = declarative_base()
 """
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import MetaData
 
-""" creating engine """
-engine = create_engine(
-        "mysql://"
-        + "root"
-        + ":"
-        + "Kitchen2020."
-        + "@localhost:3306/"
-        + "hbtn_0e_6_usa",
-        pool_pre_ping=True,
-    )
-
-
-""" Base  declaration """
 Base = declarative_base()
 
 
 class State(Base):
     """
-        args:
-             id
-             name
+    State blueprint:
+    Attributes:
+    __tablename__(str): The table name
+    id (int): The state id of the class
+    name (str): The state name of the class
     """
 
     __tablename__ = 'states'
 
-    id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
+    id = Column(Integer, primary_key=True)
     name = Column(String(128), nullable=False)
-
-
-""" Migration of the data """
-Base.metadata.create_all(engine)
-
-
-""" creating Session """
-Session = sessionmaker(bind=engine)
-session = Session()
