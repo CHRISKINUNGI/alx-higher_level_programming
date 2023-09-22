@@ -3,7 +3,7 @@
 Script that lists all State objects from the database hbtn_0e_6_usa
 """
 
-import sys
+from sys import argv
 from model_state import Base, State
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -17,26 +17,17 @@ class Main:
         database name
     """
 
-    mysql_username = sys.argv[1]
-    mysql_password = sys.argv[2]
-    database_name = sys.argv[3]
+    db_connection = "mysql+mysqldb://{}:{}@localhost:3306/{}".format(
+        argv[1], argv[2], argv[3])
 
-    engine = create_engine(
-        "mysql://"
-        + mysql_username
-        + ":"
-        + mysql_password
-        + "@localhost:3306/"
-        + database_name,
-        pool_pre_ping=True,
-    )
-
+    engine = create_engine(db_connection)
     Session = sessionmaker(bind=engine)
+
     session = Session()
 
-    states = session.query(State).order_by(State.id)
+    my_states = session.query(State).order_by(State.id)
 
-    for state in states:
+    for state in my_states:
         print(f"{state.id}: {state.name}")
 
 
