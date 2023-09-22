@@ -18,10 +18,10 @@ if __name__ == "__main__":
 
     session = Session()
 
-    for states in session.query(State).order_by(State.id):
-        if states is None:
-            print("Nothing")
+    states = session.query(State).order_by(State.id).first()
 
-        else:
-            print(f"{states.id}: {states.name}")
-            break
+    if states is None:
+        print("Nothing")
+
+    else:
+        print(f"{states.id}: {states.name}")
