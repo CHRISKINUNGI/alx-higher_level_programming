@@ -9,14 +9,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 
-class Main:
-    """
-    Args:
-        mysql username
-        mysql password
-        database name
-    """
-
+if __name__ == "__main__":
     db_connection = "mysql+mysqldb://{}:{}@localhost:3306/{}".format(
         argv[1], argv[2], argv[3])
 
@@ -29,7 +22,3 @@ class Main:
 
     for state in my_states:
         print(f"{state.id}: {state.name}")
-
-
-if __name__ == "__main__":
-    Main()
