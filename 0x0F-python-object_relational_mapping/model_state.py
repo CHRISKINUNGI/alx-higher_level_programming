@@ -10,7 +10,15 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import MetaData
 
 """ creating engine """
-engine = create_engine("mysql://root:Kitchen2020.@localhost:3306/")
+engine = create_engine(
+        "mysql://"
+        + "root"
+        + ":"
+        + "Kitchen2020."
+        + "@localhost:3306/"
+        + "hbtn_0e_6_usa",
+        pool_pre_ping=True,
+    )
 
 
 """ Base  declaration """

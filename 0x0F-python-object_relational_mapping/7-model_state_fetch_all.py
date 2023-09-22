@@ -6,6 +6,7 @@ Script that lists all State objects from the database hbtn_0e_6_usa
 import sys
 from model_state import Base, State
 from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
 
 
 class Main:
@@ -20,8 +21,15 @@ class Main:
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]
 
-    engine = create_engine(f"mysql://{mysql_username}:{mysql_password\
-            }@localhost:3306/{database_name}")
+    engine = create_engine(
+        "mysql://"
+        + mysql_username
+        + ":"
+        + mysql_password
+        + "@localhost:3306/"
+        + database_name,
+        pool_pre_ping=True,
+    )
 
     Session = sessionmaker(bind=engine)
     session = Session()
@@ -32,5 +40,5 @@ class Main:
         print(f"{state.id}: {state.name}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     Main()
