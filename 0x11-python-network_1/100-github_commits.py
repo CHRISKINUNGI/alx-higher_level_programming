@@ -8,13 +8,15 @@ Usage: ./100-github_commits.py <repository_name> <owner_name>
 import requests
 import sys
 
+
 def fetch_github_commits(repo_name, owner_name):
     """
     Fetches and prints the 10 most recent commits of a GitHub repository.
-    
+
     :param repo_name: The name of the repository.
     :param owner_name: The name of the repository owner.
     """
+
     base_url = "https://api.github.com/repos"
     url = f"{base_url}/{owner_name}/{repo_name}/commits"
     params = {"per_page": 10}  # Limit to 10 most recent commits
@@ -32,6 +34,7 @@ def fetch_github_commits(repo_name, owner_name):
     except requests.exceptions.RequestException as e:
         print(f"Error: {e}")
         sys.exit(1)
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
