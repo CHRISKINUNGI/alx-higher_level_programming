@@ -6,17 +6,7 @@ if (isNaN(sqrSize)) {
   console.log('Missing size');
 } else {
   for (let i = 0; i < sqrSize; i++) {
-    let sqrLength = '';
-    for (let j = 0; j < sqrSize; j++) {
-      sqrLength += 'x';
-    }
+    const sqrLength = 'x'.repeat(sqrSize).trim();
     console.log(sqrLength);
   }
 }
-/*
- * for (let i = 0; i < sqrSize; i++) {
- * let sqrLength = 'x'.repeat(sqrSize).trim();
-* console.log(sqrLength)
-*
- * }
- */
