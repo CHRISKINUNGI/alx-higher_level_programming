@@ -4,8 +4,6 @@ class Rectangle {
     if (this.isValidDimensions(w, h)) {
       this.width = w;
       this.height = h;
-    } else {
-      return Rectangle {};
     }
   }
 
