@@ -2,12 +2,6 @@
 // 102-concat.js
 const fs = require('fs');
 
-// Check if the correct number of arguments is provided
-if (process.argv.length !== 5) {
-  console.error('Usage: node 102-concat.js <fileA> <fileB> <fileC>');
-  process.exit(1);
-}
-
 // Get file paths from command line arguments
 const [, , fileA, fileB, fileC] = process.argv;
 
@@ -20,5 +14,3 @@ const concatenatedContent = contentA + '\n' + contentB;
 
 // Write the result to fileC
 fs.writeFileSync(fileC, concatenatedContent);
-
-console.log(`Contents of ${fileA} and ${fileB} are concatenated to ${fileC}.`);
