@@ -13,4 +13,4 @@ def roman_to_int(roman_string):
                 roman_numeral[roman_string[i - 1]]
         else:
             sum += roman_numeral[roman_string[i]]
-    return sum
+    return int(sum)
